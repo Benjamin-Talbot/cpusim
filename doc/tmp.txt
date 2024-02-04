@@ -1,0 +1,22 @@
+Registers
+- General purpose
+    - 8-bit
+    - 16-bit
+    - [32, 64, Multipurpose (multi-size like x86 assembly)]
+- Register pair
+    - 16 bit
+    - [32, 64]
+Flags
+- 8-bit
+- [16, 32, 64]
+Latch/Flip-flops
+Pin?
+Bit
+Byte
+Word
+[double word, quad word]
+CPU
+RAM
+- Address?
+- Sidebar
+- Contents

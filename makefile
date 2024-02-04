@@ -1,4 +1,4 @@
-CC=gcc
+CC=g++
 FLAGS=-g -Wall
 LFLAGS=$(FLAGS) -lncurses
 BINDIR=bin
