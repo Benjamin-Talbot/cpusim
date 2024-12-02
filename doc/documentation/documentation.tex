@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage[letterpaper, portrait, margin=1in]{geometry}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{xcolor}
+\usepackage{soul}
+
+\graphicspath{{images/}}
+
+\newcommand{\alert}[1]{\todo[color=red!40]{#1}}
+\newcommand{\edit}[1]{\todo[color=yellow!60]{#1}}
+\newcommand{\question}[1]{\todo[color=cyan!40]{#1}}
+
+\begin{document}
+\sloppy
+
+\include{transmittalletter}
+
+% \include{notes}
+% \include{titlepage}
+
+\newpage
+
+\section{Introduction}
+
+
+\section{Components}
+
+
+\section{Graphics}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.45]{layout.png}
+    \caption{Layout of the system}
+    \label{fig:layout}
+\end{figure}
+\section{Graphics}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.9]{intel8080.png}
+    \caption{Intel 8080}
+    \label{fig:intel8080}
+\end{figure}
+\section{Graphics}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=1]{ram.png}
+    \caption{RAM}
+    \label{fig:ram}
+\end{figure}
+
+% \includegraphics{layout.png}
+
+
+
+
+\end{document}

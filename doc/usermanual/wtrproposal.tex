@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage[letterpaper, portrait, margin=1in]{geometry}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{xcolor}
+\usepackage{soul}
+
+\graphicspath{{images/}}
+
+\newcommand{\alert}[1]{\todo[color=red!40]{#1}}
+\newcommand{\edit}[1]{\todo[color=yellow!60]{#1}}
+\newcommand{\question}[1]{\todo[color=cyan!40]{#1}}
+
+\begin{document}
+\sloppy
+
+\include{transmittalletter}
+
+\include{titlepage}
+
+\newpage
+
+\section{Introduction}
+Dr. Nathaniel Johnston is an associate professor in the Department of Mathematics and Computer Science at Mount Allison University. His main topics of research are solving problems in the field of quantum information theory, especially those related to quantum resources such as quantum entanglement. He also maintains a MATLAB package called QETLAB. MATLAB is a programming language and numeric computing environment, and packages are additional programming tools and functions that are not available in native MATLAB but can be added to it. QETLAB, which stands for Quantum Entanglement LABoratory, provides functionality to explore and manipulate quantum entanglement.
+
+I am a research assistant and will be working on solving research problems similar to the ones described above. I am working on a problem asking how to characterize whether certain quantum states are entangled by applying operators to those states and finding the eigenvalues of the result. Characterizing the states in terms of their eigenvalues will hopefully help answer the broader question of how to determine which states are entangled purely based on their eigenvalues.
+
+As mentioned above, Dr. Johnston is the maintainer of a MATLAB package called QETLAB. QETLAB provides many useful functions and features to do calculations and simulations related to quantum entanglement. Dr. Johnston is currently unable to dedicate much time to actively maintaining QETLAB, yet he has a list of functions he wishes to add and issues that need to be fixed. For example, there is a function called OperatorSchmidtDecomposition that fails to run properly when a certain edge case family of matrices is passed to it as input. Additionally, QETLAB should include functions related to a topic known as k-coherence. This requires understanding semidefinite programming, an optimization method for certain matrix inequalities. These new features would also require documentation to be written describing their usage. Another example is updating some existing QETLAB functions to make them up-to-date with current results in research, such as adding new methods to determine entanglement in a quantum system.
+
+These maintenance tasks are the subject of this work term report project. Because Dr. Johnston is lacking the time necessary to accomplish these tasks, I will contribute to QETLAB by fixing functions such as OperatorSchmidtDecomposition, implementing functions related to k-coherence as well writing their documentation pages, and updating functions to include new methods from the literature.
+
+Only a few key players will be involved in this project. The main one is Dr. Johnston, my supervisor. Since he is the maintainer of QETLAB, he will be able to answer many of my questions about QETLAB or quantum entanglement in general, and this will aid me in maintaining progress in the project. Other people who may or may not be involved in the project are other students performing research in the group that I work with. If other people are involved, it will become a collaborative effort. Regardless of whether others contribute, I could still consult them for advice or ask them questions regarding the project.
+
+The main issues that need to be considered during this project are those related to any programming project. For example, I need to ensure that I do not introduce any bugs into the programs I write for QETLAB and that code refactoring is done appropriately. Also, supporting documentation must be kept up-to-date and accurate. Aside from these programming issues to watch out for, I must be confident that I correctly understand the concepts that I am learning, otherwise I could program them incorrectly in QETLAB. If some functions depend on helper functions that are implemented incorrectly due to a lack of understanding, this could be unfavorable and require additional effort to rectify.
+
+The scope of this report encompasses the following:
+\begin{itemize}
+    \item the research that will be performed to successfully complete the maintenance tasks,
+    \item relevant aspects of these tasks such as mathematical concepts, MATLAB and QETLAB code (existing and new), and documentation,
+    \item the people involved in the project,
+    \item thought and development processes,
+    \item alternatives considered during the project, and
+    \item any recommendation that will be selected among the available alternatives.
+\end{itemize}
+
+Some limitations and difficulties could hinder the progress of this project. My lack of knowledge of MATLAB will require me to learn the specifics of the language so I can write concise and efficient code. Needing to study and learn each mathematical concept that I will work on in QETLAB will lengthen the duration of this project. Additionally, the multitude of concepts to learn and tasks to complete will add complexity to the project because of the need to constantly context-switch between them. My lack of understanding of QETLAB's structure will also limit my ability to progress because I will need to study it to write my code in a similar manner and to learn any existing functions that I can use from it.
+
+% lack of knowledge of MATLAB, concepts, and multitude of concepts, and QETLAB, multitude of sub-projects
+
+% \hl{brief historical background tracing source of propblem/opportunity}
+
+
+\section{Research and Analysis}
+As mentioned previously, this project will involve dealing with quantum entanglement, an intricate field of science. As such, it will require extensive research into scholarly papers that cover topics on the subject. Before being able to write any code for the QETLAB package, I will need to understand the concepts involved very well. Overall, I will also need to learn how to program in MATLAB and understand the language at a more fundamental level to be able to effectively solve problems and implement the code for the solutions.
+
+Fixing the problem with the OperatorSchmidtDecomposition function will require learning about the issue and the properties of the family of matrices that break it, finding an effective solution to the problem, and writing the code to take care of the special case. Implementing functions to add k-coherence to QETLAB will require extensive research on the subject, and this will also require learning about a mathematical optimization method known as semidefinite programming. Research papers and textbook references will need to be studied to understand these topics and implement them. Updating some functions from QETLAB to include up-to-date research results will require researching any new methods that have been found to determine the entanglement or separability (non-entanglement) of quantum states. I will essentially need to perform a literature review to find the relevant research, then I will need to study the new methods and learn how to implement them in MATLAB code. Because this project involves advanced topics that are at the forefront of current research, the research methods listed above are the most appropriate and follow a typical research process.
+
+Along with research, I will need to analyze the best way to write the MATLAB code to complete the tasks. For example, this could include figuring out how to write the code efficiently (both in terms of speed and memory usage) or how to best implement the algorithms and bug fixes. The analysis required is discussed in more detail in the following section.
+
+
+\section{Alternatives}
+Because this project involves several different types of programming tasks, namely bug fixing, algorithm design and implementation, and code maintenance, there are several alternative methods to consider when tackling these tasks. The OperatorSchmidtDecomposition function currently fails to handle a certain family of matrices correctly. To fix this problem, I could treat this family of matrices as a special case in the function, or I could try to rewrite the function to work correctly regardless of the type of matrix that is input. Considering algorithm design, there are factors such as execution speed and memory usage that need to be considered, which is usually a question of balancing out the two in a compromising fashion. Whether a function should be written for a specific use case or more general usage should be considered as well, which might have implications on its efficiency and user-friendliness. When writing new code to add k-coherence functionality to QETLAB, the organization of the code is an important detail. Code can become unwieldy and lose maintainability if it is not organized properly, so planning will be an important feature of this project and functions will need to be grouped properly. Code organization and proper implementation methods will also be considerations regarding the code maintenance tasks such as updating functions to include recent research results.
+
+% \hl{cost benefit analysis}
+
+A cost benefit analysis cannot be represented in terms of monetary value because QETLAB is maintained voluntarily, without remuneration. However, the impact that working on QETLAB could have on non-financial factors is worth mentioning. The only major costs of completing the maintenance tasks are my time and effort, along with minimal guidance from my supervisor. Dr. Johnston's time commitment for supporting this project will be far inferior to what it would be if he were to complete it himself. Additionally, my time will be well spent on this project. As a computer science student, I will gain valuable experience working with a codebase that is public and available for anyone to use. However, there are more impactful reasons concerning QETLAB's users. In its current state, QETLAB needs some bug fixes, some features added, and some functionality updated. QETLAB users will greatly benefit from these improvements to the MATLAB package because these changes will expand upon the features that were previously provided. This can allow them to do things with it that were not possible before. Additionally, allowing me to work on this project will remove the burden from Dr. Johnston, permitting QETLAB to progress without overloading his responsibilities.
+
+% \hl{any alternatives, whether a cost/benefit analysis can be completed}
+% The main alternatives involved in this project are those that are involved in algorithm design. This
+% \\ balancing time and space complexities, user-friendliness and customizability (for improved efficiency and/or different usages)
+% \\ organization/hierarchy of k-coherence functions, how to make them work together, using semidefinite programming appropriately (different ways could go about semidefinite programming?)
+% \\ how to fix bugs, like which way is best (ex. treat as special case, or try and fix whole thing - will require analysis)
+% \\ \hl{something about the adding entanglement detection methods, analyzing alternative ways of doing this}
+
+
+\section{Recommendation}
+% \hl{check WTR manual}
+
+During this work term report project, the alternatives listed above will be considered during each step to ensure that the resulting state of QETLAB is consistent with its current state and that it is built with efficiency and usability in mind. Eventually, when this project is completed, an updated version of QETLAB will be presented to Dr. Johnston as a recommendation for the next release of the package. This work term report project will benefit my supervisor by offloading the burden of updating and maintaining QETLAB. He has not had time to tend to the list of maintenance items for QETLAB for some time, so completing these items for him will be beneficial and allow him to focus on his other responsibilities. It will also be beneficial to QETLAB users by fixing bugs, providing additional functionality, and providing additional methods to determine the entanglement of quantum states. The service that QETLAB provides to users will hence be improved and provide a better experience for its audience. Considering these factors and the external effects of performing QETLAB's maintenance, the expected gains outweigh the minimal costs.
+
+
+\end{document}
